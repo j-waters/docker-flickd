@@ -1,6 +1,6 @@
 FROM debian:11
 
-LABEL maintainer "Philipp Schmitt <philipp@schmitt.co>"
+LABEL maintainer "James Waters <james@jcwaters.co.uk>"
 
 RUN apt-get update && \
     # Dependencies
