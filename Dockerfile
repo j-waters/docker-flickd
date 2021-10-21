@@ -1,8 +1,4 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
-
-ARG BUILD_ARCH
-ARG BUILD_VERSION
+FROM debian:11
 
 LABEL maintainer "Philipp Schmitt <philipp@schmitt.co>"
 
@@ -16,7 +12,7 @@ RUN apt-get update && \
         aarch64) export ARCH=aarch64 ;; \
     esac && \
     # Flicd
-    git clone --depth 1 -b "${BUILD_VERSION}" \
+    git clone --depth 1 \
         https://github.com/50ButtonsEach/fliclib-linux-hci \
         /tmp/src && \
     cp "/tmp/src/bin/${ARCH}/flicd" /usr/bin/flicd && \
