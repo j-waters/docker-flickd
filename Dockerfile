@@ -1,6 +1,8 @@
 FROM alpine:latest
 
-LABEL maintainer "James Waters <james@jcwaters.co.uk>" 
+LABEL maintainer "James Waters <james@jcwaters.co.uk>"
+
+RUN apk add --no-cache bash
 
 RUN apk --no-cache --virtual deps add git && \
     case $(arch) in \
